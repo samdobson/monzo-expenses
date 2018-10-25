@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="report.css" media="print" rel="stylesheet">
+    <title>Expense Report</title>
+    <meta name="description" content="Monzo Expense Report">
+    <meta name="author" content="{{ account_holder }}">
+  </head>
+
+  <body>
+    <h1>Expenses</h1>
+
+    <aside>
+      <div>
+      {{ start_date.strftime('%d %b %y') }} - 
+      {{ end_date.strftime('%d %b %y') }}
+      </div>
+    </aside>
+
+    <dl id="header-info">
+      <dt>Prepared</dt>
+      <dd>{{ generated }}</dd>
+    </dl>
+
+    <table>
+      <thead>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Merchant</th>
+        <th>Amount</th>
+      </thead>
+      <tbody>
+        {% for expense in expenses %}	
+        <tr>
+	  <td>{{ expense.created.strftime('%d %b %Y') }}</td>
+	  <td>{{ expense.raw_data.notes }}</td>
+	  <td>{{ expense.raw_data.merchant.name }}</td>
+	  <td>{{ expense.amount }}</td>
+        </tr>
+        {% endfor %}	
+      </tbody>
+    </table>
+
+    <table id="total">
+      <thead>
+        <th>Pay To</th>
+        <th>Account</th>
+        <th>Total Expenses</th>
+      </thead>
+      <tbody>
+        <tr>
+	  <td>{{ account_holder }}</td>
+	  <td>{{ sort_code }} {{ account_number }}</td>
+	  <td>{{ total }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
