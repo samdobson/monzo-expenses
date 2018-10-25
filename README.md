@@ -1,6 +1,8 @@
 # :credit_card: Monzo Expenses
 
-Beautiful expense reports direct from your Monzo Account. 
+Beautiful expense reports direct from your Monzo Account.
+
+Pulls all transactions categorised as 'Expenses' within a specified time range along with any notes you have made.
 
 [![Expense Report](https://raw.githubusercontent.com/samdobson/monzo-expenses/master/example.png)](https://github.com/samdobson/monzo-expenses/blob/master/example.pdf)
 
