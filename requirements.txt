@@ -1,7 +1,7 @@
 atomicwrites==1.2.1
 attrs==18.2.0
 cairocffi==0.9.0
-CairoSVG==2.2.1
+CairoSVG==2.5.1
 certifi==2018.10.15
 cffi==1.11.5
 chardet==3.0.4
